@@ -2,9 +2,15 @@
 -e .
 
 # external requirements
-click
-Sphinx
-coverage
-awscli
-flake8
+click>=8.1.3
+# conflitando no awscli
+#Sphinx
+Sphinx>=7.0.1
+coverage>=7.2.7
+# conflitando com Sphinx
+#awscli
+#awscli>=1.27.151
+flake8>=6.0.0
 python-dotenv>=0.5.1
+# pareceu necessário make_dataset.py
+pylance>=0.4.20
