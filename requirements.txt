@@ -1,4 +1,11 @@
-# local package
+# https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#working-in-development-mode
+# instala pacote local em development-mode
+# roda $ pip install -e . quando roda # pip install --requirement requirements.txt
+# -e, --editable <path/url>
+# usar -vvv para máxima verbosidade, quando necessário
+# Install a project in editable mode (i.e. setuptools "develop mode") from a local project path or a VCS url.
+
+# depende da presença de setup.py ???
 -e .
 
 # external requirements
@@ -14,3 +21,4 @@ flake8>=6.0.0
 python-dotenv>=0.5.1
 # pareceu necessário make_dataset.py
 pylance>=0.4.20
+flask>=2.3.2
