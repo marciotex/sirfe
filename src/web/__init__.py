@@ -46,21 +46,30 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
+######################## INÍCIO SEÇÃO ESPECIFICIDADES ###################33
     # a simple page that says hello
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
 
-    # registrar init-db com o app
+    # Define and Access the Database: registrar init-db com o app
+    # https://flask.palletsprojects.com/en/2.3.x/tutorial/database/
+    # executa a função definida lá, registrando os comandos
+    # app agora "sabe" das funções e pode acioná-las
     from . import db
     db.init_app(app)
+    # https://flask.palletsprojects.com/en/2.3.x/tutorial/views/
+    # registrando o primeiro blueprint
+    from . import auth
+    app.register_blueprint(auth.bp)
 
+######################## FIM SEÇÃO ESPECIFICIDADES ########################
+    # no final, a fábrica do app retorna....o app, funcionando
     return app
 
 # Para rodar, use o comando flask no diretório do pacote
 #
-# $ flask --app .\src\web\app run --debug
-# * Serving Flask app '.\src\web\app'
+# $ flask --app .\src\web run --debug
+# * Serving Flask app '.\src\web'
 # * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 # Acesse http://127.0.0.1:5000/hello

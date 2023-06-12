@@ -33,7 +33,8 @@ def init_db_command():
     """Clear the existing data and create new tables."""
     init_db()
     click.echo('Initialized the database.')
-
+# aqui definimos a função que, quando chamada pela aplicação, registrará
+# os comandos init e close db na aplicação
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)

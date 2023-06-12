@@ -4,6 +4,10 @@
 # para gerar arquivos de distribuição: py -m build (Windows)
 # mais detalhes de como fazer o upload de teste e instalação, ver aqui:
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/ 
+# para rodar
+# flask --app .\src\web run (se não estiver instalado, precisa estar no diretório do projeto (pacote))
+# export FLASK_APP=src/web && flask run (em BASH)
+# $env:FLASK_APP = "src/web" && flask run (em POWER SHELL)
 # talvez testar poetry no futuro: https://mathspp.com/blog/how-to-create-a-python-package-in-2022
 
 [build-system]
@@ -19,6 +23,9 @@ name = "sirfe"
 # X.YbN.devM       # Developmental release of a beta release
 # X.YrcN.devM      # Developmental release of a release candidate
 version="0.1.dev1"
+dependencies = [
+    "flask",
+]
 authors = [
   { name="marciotex", email="marciotex@gmail.com" },
 
