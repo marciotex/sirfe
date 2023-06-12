@@ -1,0 +1,66 @@
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+# para instalar em modo editável: pip install -vvv -e .
+# para gerar arquivos de distribuição: py -m build (Windows)
+# mais detalhes de como fazer o upload de teste e instalação, ver aqui:
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/ 
+# talvez testar poetry no futuro: https://mathspp.com/blog/how-to-create-a-python-package-in-2022
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sirfe"
+# https://peps.python.org/pep-0440/#developmental-releases
+# começar com X.Y.devN    # Developmental release
+# quando apta a alguns testes externos, 
+# X.YaN.devM       # Developmental release of an alpha release
+# X.YbN.devM       # Developmental release of a beta release
+# X.YrcN.devM      # Developmental release of a release candidate
+version="0.1.dev1"
+authors = [
+  { name="marciotex", email="marciotex@gmail.com" },
+
+]
+# This is a one-line description or tagline of what your project does. This
+# corresponds to the "Summary" metadata field:
+# https://packaging.python.org/specifications/core-metadata/#summary
+description = "Integração de dados de repasses federais no RS"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+# Classifiers help users find your project by categorizing it.
+# For a list of valid classifiers, see https://pypi.org/classifiers/
+classifiers=[  # Optional
+    # How mature is this project? Common values are
+    #   3 - Alpha
+    #   4 - Beta
+    #   5 - Production/Stable
+    "Development Status :: 3 - Alpha",
+    # Indicate who your project is intended for
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Office/Business",
+    # Pick your license as you wish
+    "License :: OSI Approved :: MIT License",
+    # Specify the Python versions you support here. In particular, ensure
+    # that you indicate you support Python 3. These classifiers are *not*
+    # checked by 'pip install'. See instead 'python_requires' below.
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only",
+    ]
+# This field adds keywords for your project which will appear on the
+# project page. What does your project relate to?
+#
+# Note that this is a list of additional keywords, separated
+# by commas, to be used to assist searching for the distribution in a
+# larger catalog.
+keywords=["government", "data integration", "data science"]  # Optional
+
+[project.urls]
+"Homepage" = "https://github.com/marciotex/sirfe"
+"Bug Tracker" = "https://github.com/marciotex/sirfe/issues"
