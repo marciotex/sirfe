@@ -4,8 +4,8 @@
 # -e, --editable <path/url>
 # usar -vvv para máxima verbosidade, quando necessário
 # Install a project in editable mode (i.e. setuptools "develop mode") from a local project path or a VCS url.
-
-# depende da presença de setup.py ???
+#
+# instalação local não depende da presença de setup.py
 -e .
 
 # external requirements
