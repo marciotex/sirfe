@@ -90,3 +90,6 @@ target/
 
 # init-db
 instance/
+
+# venv eh local
+.venv/
