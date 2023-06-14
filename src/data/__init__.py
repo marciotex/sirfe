@@ -3,6 +3,7 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
+import subprocess
 
 
 @click.command()
@@ -12,6 +13,16 @@ def main(input_filepath, output_filepath):
     """ Runs data processing scripts to turn raw data from (../raw) into
         cleaned data ready to be analyzed (saved in ../processed).
     """
+    spark_submit_str= "spark-submit \
+    --master local[4] \
+    MakeDatasetApp.py"
+    process=subprocess.Popen(spark_submit_str,stdout=subprocess.PIPE,stderr=subprocess.PIPE, universal_newlines=True, shell=True)
+    stdout,stderr = process.communicate()
+    if process.returncode !=0:
+        print(stderr)
+    print(stdout)
+
+
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
 
