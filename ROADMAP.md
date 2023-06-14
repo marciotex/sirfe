@@ -1,9 +1,34 @@
 # ROADMAP
 
-## Migração Dataflows Power Apps (MICROSOFT) --> Hadoop, Spark, Python e Airflow (PROCERGS): Prova de Conceito
+## Migração Dataflows Power Apps ("solução MICROSOFT") --> "solução PROCERGS" como alternativa, no âmbito do SIRFE: Prova de Conceito
 
-> executar, com Hadoop, Spark, Python e Airflow, as rotinas básicas de ETL automatizadamente a partir dos dados dos tipos de fontes atualmente usadas (arquivos csv zipados via web anônima; arquivos csv via web autenticada no SME e arquivos xlsx via sharepoint ambiente Governo RS), disponbilizando o resultado do processamento dos dados como fonte de dados para Datasets do Power BI no ambiente Governo RS
+Esta prova de conceito investiga a seguinte questão:
 
+> é possível executar, com suporte de serviços disponibilizados ou disponibilizáveis pela PROCERGS as rotinas básicas de ETL do SIRFE atualmente suportadas por serviços disponibilizados pela MICROSOFT, mais especificamente a tecnologia Dataflows do produto Power Apps (oferecida no âmbito da contratação do Office 365)?
+
+O SIRFE é...???
+
+Esta prova de conceito responde afirmativamente esta questão e identifica algumas formas alternativas de solução (como é possível). Esta prova de conceito não avalia a viabilidade das soluções identificadas, sob nenhum ponto de vista, seja técnico, econômico, de estratégia de TIC ou outro.
+
+### Premissas sobre os serviços disponibilizados ou disponibilizáveis pela PROCERGS
+
+1. Hadoop, Spark, Python e Airflow
+2. Hospedagem de máquina virtual, serviços isolados, desenvolvimento da solução completa, etc
+
+### Requisitos da solução alternativa
+
+1. A solução deve ser capaz de:
+    1. conectar-se a fontes do tipo web, com e sem autenticação, e sharepoint
+    2. ler e carregar dados em formato tabular, com tipos de arquivo csv, csv comprimido (zip) e xlsx
+    3. gravar dados em formato e disponibilizar conectores compatíveis com o Power Query (Online? Faz diferença?), todos compatíveis com o modo de conectividade import e direct query (importa ter os 2? custo?)
+    4. disponibilizar dados no ambiente Governo do RS (nuvem Microsoft, sem necessidade de gateway)
+2. Os datasets consolidados devem ser atualizáveis regularmente mediante rotinas agendadas em tempo de execução (admin - e não devel - do sistema), com log e aviso em caso de rotinas com falha (semelhante ao sistema de agendamento do Power BI)
+
+### Tarefas e/ou milestones
+
+> executar, com Hadoop, Spark, Python e Airflow, as rotinas básicas de ETL automatizadamente a partir dos dados dos tipos de fontes atualmente usadas (arquivos csv zipados via web anônima; arquivos csv via web autenticada no SME e arquivos xlsx via sharepoint ambiente Governo RS), disponbilizando o resultado do processamento dos dados (datasets consolidados) como fonte de dados para datasets do Power BI no ambiente Governo RS
+
+- [ ] csvwebanon.py: carregar csv, web anônima, e armazenar em cache, em formato tabular carregável pelo pyspark (parquet?)
 - [ ] carregar das fontes (todas) e salvar os arquivos (todos os tipos) com Python, no disco local
 - [ ] carregar das fontes (todas) e salvar os arquivos (todos os tipos) com Python, no Hadoop (com Spark? possível sem? convém sem?)
 - [ ] carregar do Hadoop e salvar no Hadoop tabelas (qual formato usar para o processamento? Spark determina?)

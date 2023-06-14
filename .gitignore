@@ -75,8 +75,12 @@ target/
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-/data/
+# exclude data content from source control by default
+data/external/
+data/interim/
+data/processed/
+data/raw/
+
 
 # Mac OS-specific storage files
 .DS_Store
@@ -93,3 +97,4 @@ instance/
 
 # venv eh local
 .venv/
+siconv_convenio.csv
