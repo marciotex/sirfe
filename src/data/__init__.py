@@ -14,6 +14,8 @@ def main():
     """ Runs data processing scripts to turn raw data from (../raw) into
         cleaned data ready to be analyzed (saved in ../processed).
     """
+# execução como subprocesso adaptado daqui:
+# https://sparkbyexamples.com/pyspark/run-pyspark-script-from-python-subprocess/
     spark_submit_str= "spark-submit \
     --master local[4] \
     src/data/MakeDatasetApp.py"
