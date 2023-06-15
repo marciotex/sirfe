@@ -22,3 +22,4 @@ python-dotenv>=0.5.1
 # pareceu necessário make_dataset.py
 pylance>=0.4.20
 flask>=2.3.2
+Office365-REST-Python-Client
