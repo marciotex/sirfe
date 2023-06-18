@@ -1,13 +1,17 @@
 from office365.runtime.auth.authentication_context import AuthenticationContext
 from office365.sharepoint.client_context import ClientContext
 from office365.sharepoint.files.file import File 
+import os
+from dotenv import load_dotenv
 
 ####inputs########
 # This will be the URL that points to your sharepoint site. 
 # Make sure you change only the parts of the link that start with "Your"
 url_shrpt = 'https://rsgovbr.sharepoint.com/sites/SPGG-DECAP'
 username_shrpt = 'marcio-teixeira'
-password_shrpt = '5d=KQfG9?~T#u?('
+
+load_dotenv()
+password_shrpt = os.environ.get('PASSWORD_SHAREPOINT')
 folder_url_shrpt = '/sites/SPGG-DECAP/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSPGG%2DDECAP%2FShared%20Documents%2FGeneral%2FBI%2FRepasses%20Federais%20no%20RS%2FDados&viewid=15689daa%2Dfb15%2D415f%2D9cc7%2Dc52be55d3c85'
 
 #######################
