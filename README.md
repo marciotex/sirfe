@@ -1,7 +1,7 @@
 sirfe
 ==============================
 
-Data integration of TBR, FPE and SME
+Data integration of TBR, FPE and SME.
 
 Project Organization
 ------------
